@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 0.5s;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    overflow: hidden;
+}
+
+#menu1 {
+    width: 90px;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    position: relative;
+    z-index: 1;
+
+    svg {
+        fill: black;
+        height: 30px;
+        width: 30px;
+    }
+
+}
+
+#menu2 {
+    width: 270px;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    left: -270px;
+    top: 0;   
+    
+}
+
+#current-pg {
+    color: #2916e0;
+}
+
+#superior {
+    height: 90px;
+    width: 100%;
+    display: flex;
+}
+
+#back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background-color: #0f0f0f;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 90px;
+    background-color: #2916e0;
+}
+
+#list {
+    height: 270px;
+    list-style: none;
+    font-weight: 600;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50%;
+    margin-top: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    a {
+        text-decoration: none;
+        color: #b2b2b2;
+        li {
+            margin-bottom: 30px;
+        }
+        
+    }
+    a:hover {
+        color: #2916e0;
+    }
+}
+
+#social-icons2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 50% 20% 10% 20%;
+    svg {
+        height: 22px;
+        width: 22px;
+        fill: #b2b2b2;
+    }
+}
+
+#txt-menu {
+    margin-top: 10%;
+    padding: 0% 5%;
+    text-align: center;
+    b{
+        font-weight: 400;
+        color: #b2b2b2;
+        cursor: pointer;
+    }
+    b:hover {
+        color: #2916e0;
+    }
+}
+
+#menu-input:checked~#menu2 {
+    left: 0;
+}
+
+#menu-icon {
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    background-color: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        color: white;
+        transform: scale(1.8);
+    }
+}
+
+#menu-input {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
+
+#social-icons {
+    margin-top: 350px;
+    margin-bottom: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+
+    svg {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+    }
+}
+
+#gallery {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#img1 {
+    background-image: url(img/5.jpg.webp);
+    flex-grow: 5.5;
+    mix-blend-mode: normal;
+}
+
+#img2 {
+    background-image: url(img/1.jpg.webp);
+}
+
+#img3 {
+    background-image: url(img/2.jpg.webp);
+}
+
+#img4 {
+    background-image: url(img/3.jpg.webp);
+}
+
+#img5 {
+    background-image: url(img/4.jpg.webp);
+}
+
+#txt {
+    position: absolute;
+    bottom: 0;
+    padding: 0 0 50px 40px;
+    opacity: 0;
+    text-wrap: nowrap;
+    p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        color: #2916e0;
+        text-transform: uppercase;
+        font-weight: 600;
+        width: 90px;
+        height: 26px;
+        border-radius: 3px;
+        font-size: 12px;
+    }
+    h2 {
+        font-size: 60px;
+    }
+}
+
+#author {
+    display: flex;
+    align-items: center;
+    h4 {
+        font-size: 24px;
+        margin-left: 2%;
+    }
+}
+#authorimg {
+    height: 60px;
+    width: 60px;
+    background-image: url(img/author.jpg.webp);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.item {
+    flex-grow: 1;
+    background-size: cover;
+    mix-blend-mode: multiply;
+    background-position: 20% 0%;
+    color: white;
+    position: relative;
+    transition: 0.5s;
+}
+
+.item:hover {
+    flex-grow: 5.5;
+    mix-blend-mode: normal;
+}
+
+#gallery:hover #img1 {
+    flex-grow: 1;
+}
+
+#gallery:hover #img1:hover {
+    flex-grow: 5.5;
+    mix-blend-mode: normal;
+}
+
+#filter {
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.8));
+}
+
+.item:hover #txt {
+    opacity: 1;
+}
+
+#gallery #img1 #txt {
+    opacity: 1;
+}
+
+#gallery:hover #img1 #txt {
+    opacity: 0;
+}
+
+#gallery:hover #img1:hover #txt {
+    opacity: 1;
+}
